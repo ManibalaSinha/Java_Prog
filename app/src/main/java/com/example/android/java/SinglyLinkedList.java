@@ -19,6 +19,16 @@ public class SinglyLinkedList {
         head = head.next;
         return temp;
     }
+    public void deleteAfter(Node after){
+        Node temp = head;
+        while (temp.next != null && temp.data != after.data){
+            temp = temp.next;
+        }
+        if(temp.next != null){
+            temp.next = temp.next.next;
+        }
+    }
+
     public  void printLinkedList(){
         System.out.println("Printing Linked List");
         Node current = head;
